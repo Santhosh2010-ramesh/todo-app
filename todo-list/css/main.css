@@ -1,131 +1,121 @@
-/* Variables */
-:root {
-	--dark: #1b1c1d;
-	--blue: #2185d0;
-	--green: #1ebc30;
-	--red: #db2828;
-	--white: #ffffff;
-	--gray: #babac0;
-	--secondary: #fbfdff;
-}
-
-/* Default Settings */
+/* Reset some default styles */
 * {
-	padding: 0;
 	margin: 0;
+	padding: 0;
 	box-sizing: border-box;
-}
-body {
-	color: var(--dark);
-	background: var(--secondary);
-	font-family: 'Lato', sans-serif;
-}
-.ui.grid + .grid {
-	margin-top: 0;
-}
-
-/* Classes */
-body::-webkit-scrollbar {
-	background-color: var(--secondary);
-	width: 16px;
-}
-body::-webkit-scrollbar-track {
-	background-color: var(--secondary);
-}
-body::-webkit-scrollbar-thumb {
-	background-color: var(--gray);
-	border-radius: 16px;
-	border: 4px solid var(--white);
-}
-
-/* Header */
-.main-header {
-	color: var(--white);
-	background: var(--blue);
-	padding: 1.5rem 0;
-	text-align: center;
-}
-
-/* Add Task */
-#add-task {
-	width: 70%;
-	margin: 0 auto;
-	margin-top: 2rem;
-}
-#add-task input {
-	margin: 1.5rem auto;
-}
-
-/* Buttons */
-#buttons {
-	width: 70%;
-	margin: 0 auto;
-	margin-bottom: 3rem;
-}
-
-/* Tasks List */
-#tasks-list {
-	margin: 0 auto;
-	width: 70%;
-	list-style: none;
-}
-#tasks-list li {
-	width: 100%;
-}
-#tasks-list li .remove,
-#tasks-list li .edit {
-	opacity: 0;
-	transition: all 0.3s ease;
-}
-#tasks-list li:hover .remove,
-#tasks-list li:hover .edit {
-	opacity: 1;
-}
-#tasks-list li .column:last-child {
-	text-align: right;
-}
-#tasks-list li i {
-	cursor: pointer !important;
-}
-
-/* Alert */
-.alert {
-	width: 70%;
-	margin: 0 auto;
-	margin-bottom: 1rem;
-	text-align: center;
-	padding: 0.75rrem 1.25rrem;
+  }
+  
+  /* Body styling */
+  body {
+	font-family: 'Arial', sans-serif;
+	background-color: #f1f1f1;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	min-height: 100vh;
+	padding: 20px;
+  }
+  
+  /* Container for both lists */
+  .container {
+	width: 90%;
+	max-width: 1200px;
+	background-color: white;
+	padding: 20px;
 	border-radius: 10px;
-	line-height: 1.6rem;
-}
-.alert-warning {
-	color: #856404;
-	background-color: #fff3cd;
-	border-color: #ffeeba;
-}
-
-/* Noty */
-.noty_theme__metroui.noty_bar .noty_body {
-	background: var(--green);
-	color: var(--white);
-	border-radius: 0.28571429rem;
-	box-shadow: 0 0 0 1px var(--green) inset, 0 0 0 0 transparent;
-}
-.noty_theme__metroui.noty_type__error {
-	background: none;
-}
-.noty_theme__metroui.noty_bar.noty_type__error .noty_body {
-	background: var(--red);
-	color: var(--white);
-	border-radius: 0.28571429rem !important;
-	box-shadow: 0 0 0 1px var(--red) inset, 0 0 0 0 transparent;
-}
-
-/* Responsive */
-@media screen and (max-width: 770px) {
-	#add-task,
-	#buttons,
-	#tasks-list {
-		width: 100%;
-	}
-}
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Title styling */
+  .title {
+	text-align: center;
+	font-size: 2.5em;
+	margin-bottom: 40px;
+	color: #333;
+  }
+  
+  /* Section styling for each todo list */
+  .todo-section {
+	margin-bottom: 40px;
+  }
+  
+  .todo-section h2 {
+	font-size: 1.8em;
+	margin-bottom: 15px;
+	color: #444;
+  }
+  
+  .input-container {
+	display: flex;
+	margin-bottom: 20px;
+  }
+  
+  input[type="text"] {
+	width: 80%;
+	padding: 10px;
+	border: 2px solid #ddd;
+	border-radius: 4px;
+	font-size: 1em;
+  }
+  
+  button {
+	width: 15%;
+	padding: 10px;
+	background-color: #4CAF50;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	font-size: 1em;
+  }
+  
+  button:hover {
+	background-color: #45a049;
+  }
+  
+  /* Styling for the todo list items */
+  ul {
+	list-style: none;
+	padding: 0;
+  }
+  
+  li {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #f9f9f9;
+	padding: 12px;
+	margin: 10px 0;
+	border-radius: 5px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  li.completed {
+	background-color: #e0e0e0;
+	text-decoration: line-through;
+	color: #999;
+  }
+  
+  button.delete-btn {
+	background-color: transparent;
+	border: none;
+	color: #e74c3c;
+	font-size: 16px;
+	cursor: pointer;
+  }
+  
+  button.delete-btn:hover {
+	color: #c0392b;
+  }
+  
+  /* Color coding for Personal and Business sections */
+  .personal {
+	border-left: 4px solid #3498db;
+	padding-left: 20px;
+  }
+  
+  .business {
+	border-left: 4px solid #f39c12;
+	padding-left: 20px;
+  }
+  
